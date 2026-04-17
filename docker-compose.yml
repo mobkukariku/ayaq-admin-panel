@@ -1,0 +1,14 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_BACKEND_API=${VITE_BACKEND_API}
+    restart: unless-stopped
+
+networks:
+  default:
+    name: ayaq-network
